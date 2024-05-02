@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4 text-center">Anemia Detection</h1>
+        <form action="/" method="POST" class="space-y-4">
+            <div>
+                <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                <input type="number" name="gender" id="gender" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0 - male, 1 - female" required>
+            </div>
+            <div>
+                <label for="hemoglobin" class="block text-sm font-medium text-gray-700">Hemoglobin</label>
+                <input type="number" step="0.1" name="hemoglobin" id="hemoglobin" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="mch" class="block text-sm font-medium text-gray-700">MCH</label>
+                <input type="number" step="0.1" name="mch" id="mch" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="mchc" class="block text-sm font-medium text-gray-700">MCHC</label>
+                <input type="number" step="0.1" name="mchc" id="mchc" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="mcv" class="block text-sm font-medium text-gray-700">MCV</label>
+                <input type="number" step="0.1" name="mcv" id="mcv" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Detect Anemia</button>
+            </div>
+        </form>
+
+        {% if result %}
+            <h2 class="text-xl font-semibold mt-4">Result: {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
